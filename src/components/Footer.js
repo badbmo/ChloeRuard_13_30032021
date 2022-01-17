@@ -1,16 +1,16 @@
 import React from "react";
-import "../style/footer.css"
+import "../style/footer.css";
 
 /**
  * Footer Component
  * @returns {JSX} React component
  */
 
- function Footer() {
+function Footer() {
 	return (
-    <footer className="footer">
-      <p className="footer-text">Copyright 2020 Argent Bank</p>
-    </footer>
+		<footer className="footer">
+			<p className="footer-text">Copyright 2020 Argent Bank</p>
+		</footer>
 	);
 }
 
