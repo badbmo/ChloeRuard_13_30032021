@@ -13,7 +13,7 @@ function AccountsList() {
 		<React.Fragment>
 			<h2 class="sr-only">Accounts</h2>
 			{accountsList.map((account) => (
-				<Account />
+				<Account title={account.title} amount={account.amount} description={account.description} />
 			))}
 		</React.Fragment>
 	);

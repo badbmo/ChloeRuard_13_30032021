@@ -7,14 +7,14 @@ import Header from "../components/Header";
  * @returns {JSX} React component
  */
 
-function Home() {
+function Login() {
 	return (
 		<React.Fragment>
 			<Header />
-			<main className="login__content"></main>
+			<main></main>
 			<Footer />
 		</React.Fragment>
 	);
 }
 
-export default Home;
+export default Login;
