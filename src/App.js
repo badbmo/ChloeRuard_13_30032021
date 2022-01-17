@@ -1,18 +1,19 @@
-import './App.css';
+import './style/App.css';
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import User from "./pages/User";
+import Error from "./pages/Error";
+import Home from "./pages/Home";
 
 function App() {
-  return (
-    <div className="App">
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-    </div>
-  );
+	return (
+		<Router>
+			<Routes>
+				<Route path="/" element={<Home />} />
+				<Route path="user/:userId" element={<User />} />
+				<Route path="/*" element={<Error />} />
+			</Routes>
+		</Router>
+	);
 }
 
 export default App;
