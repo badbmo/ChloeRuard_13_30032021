@@ -2,7 +2,7 @@ import React from "react";
 import "../style/hero.css";
 
 /**
- * Footer Component
+ * Hero Component
  * @returns {JSX} React component
  */
 
