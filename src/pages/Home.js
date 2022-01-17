@@ -1,5 +1,6 @@
 import React from "react";
 import Footer from "../components/Footer";
+import Header from "../components/Header";
 
 /**
  * Home Page to display basic info
@@ -9,8 +10,8 @@ import Footer from "../components/Footer";
 function Home() {
 	return (
 		<React.Fragment>
-			<main className="home__content">
-			</main>
+			<Header />
+			<main className="home__content"></main>
 			<Footer />
 		</React.Fragment>
 	);

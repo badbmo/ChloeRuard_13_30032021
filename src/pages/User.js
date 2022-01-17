@@ -1,5 +1,6 @@
 import React from "react";
 import Footer from "../components/Footer";
+import Header from "../components/Header";
 
 /**
  * User Page to display user account
@@ -9,8 +10,8 @@ import Footer from "../components/Footer";
 function Home() {
 	return (
 		<React.Fragment>
-			<main className="user__content">
-			</main>
+			<Header />
+			<main className="user__content"></main>
 			<Footer />
 		</React.Fragment>
 	);
