@@ -10,8 +10,8 @@ import Feature from "./Feature";
 
 function FeaturesList() {
 	return (
-		<section class="features">
-			<h2 class="sr-only">Features</h2>
+		<section className="features">
+			<h2 className="sr-only">Features</h2>
 			{featuresList.map((feature) => (
 				<Feature src={feature.src} alt={feature.alt} title={feature.title} descirption={feature.description}/>
 			))}
