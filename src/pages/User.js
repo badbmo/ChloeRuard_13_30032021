@@ -3,6 +3,7 @@ import Footer from "../components/Footer";
 import Header from "../components/Header";
 import AccountsList from "../components/AccountsList";
 import Greetings from "../components/Greetings";
+import "../style/user.css"
 
 /**
  * User Page to display user account

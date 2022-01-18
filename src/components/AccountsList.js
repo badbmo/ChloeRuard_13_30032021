@@ -11,9 +11,9 @@ import Account from "./Account";
 function AccountsList() {
 	return (
 		<React.Fragment>
-			<h2 class="sr-only">Accounts</h2>
-			{accountsList.map((account) => (
-				<Account title={account.title} amount={account.amount} description={account.description} />
+			<h2 className="sr-only">Accounts</h2>
+			{accountsList.map((account, index) => (
+				<Account key={index} title={account.title} amount={account.amount} description={account.description} />
 			))}
 		</React.Fragment>
 	);

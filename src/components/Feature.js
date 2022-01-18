@@ -10,7 +10,7 @@ import "../style/feature.css";
  * @returns {JSX} React component
  */
 
-function Feature(src, alt, title, description) {
+function Feature({src, alt, title, description}) {
 	return (
 		<div className="feature-item">
 			<img src={src} alt={alt} className="feature-icon" />

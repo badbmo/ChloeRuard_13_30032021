@@ -2,6 +2,7 @@ import React from "react";
 import Footer from "../components/Footer";
 import Header from "../components/Header";
 import FeaturesList from "../components/FeaturesList";
+import Hero from "../components/Hero";
 
 /**
  * Home Page to display basic info
@@ -13,6 +14,7 @@ function Home() {
 		<React.Fragment>
 			<Header />
 			<main>
+				<Hero />
 				<FeaturesList />
 			</main>
 			<Footer />

@@ -1,7 +1,7 @@
 import React from "react";
 import "../style/header.css";
 import { NavLink } from "react-router-dom";
-import { Logo } from "../assets/argentBankLogo.png";
+import Logo from "../assets/argentBankLogo.png";
 
 /**
  * Header Component with Nav
@@ -21,11 +21,11 @@ function Header() {
 					Sign In
 				</NavLink>
 				<div>
-					<NavLink class="main-nav-item" to="/user">
+					<NavLink className="main-nav-item" to="/user">
 						<i className="fa fa-user-circle"></i>
 						Tony
 					</NavLink>
-					<NavLink class="main-nav-item" to="/home">
+					<NavLink className="main-nav-item" to="/home">
 						<i className="fa fa-sign-out"></i>
 						Sign Out
 					</NavLink>

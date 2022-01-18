@@ -9,7 +9,7 @@ import "../style/account.css";
  * @returns {JSX} React component
  */
 
-function Account(title, amount, description) {
+function Account({title, amount, description}) {
 	return (
 		<section className="account">
 			<div className="account-content-wrapper">
