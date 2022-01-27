@@ -1,6 +1,10 @@
 import React, { useState } from "react";
 import "../style/formLogin.css";
 
+//redux 
+import { useDispatch } from "react-redux";
+import {logIn} from "../redux/actions";
+
 /**
  * FormLogin Component
  * @returns {JSX} React component
@@ -8,6 +12,7 @@ import "../style/formLogin.css";
 
 function FormLogin() {
 	
+	const dispatch = useDispatch();
 	const [username, setUsername] = useState("");
 	const [password, setPassword] = useState("");
 	const [errorMessage, setErrorMessage] = useState("");
@@ -19,6 +24,8 @@ function FormLogin() {
 			setErrorMessage("Please fill the form to connect");
 		}
 		console.log(username, password);
+		//dispatch(getTokenReducer(email, password))
+		dispatch(logIn());
 	};
 
 	return (
