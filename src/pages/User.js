@@ -4,6 +4,10 @@ import Header from "../components/Header";
 import AccountsList from "../components/AccountsList";
 import Greetings from "../components/Greetings";
 import "../style/user.css"
+import { Navigate } from "react-router-dom";
+
+//redux 
+import { useSelector } from "react-redux";
 
 /**
  * User Page to display user account
@@ -11,6 +15,11 @@ import "../style/user.css"
  */
 
 function User() {
+	const isLogged = useSelector((state) => state.isLoggedReducer);
+
+	if(!isLogged){
+		return <Navigate to="/sign-in"/>
+	}
 	return (
 		<React.Fragment>
 			<Header />
