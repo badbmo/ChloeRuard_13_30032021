@@ -1,9 +1,11 @@
 import React, { useState } from "react";
 import "../style/formLogin.css";
+import { getToken, getUser } from "../utils/services/fetchApi";
 
-//redux 
-import { useDispatch } from "react-redux";
-import {logIn} from "../redux/actions";
+//redux
+import { useDispatch, useSelector } from "react-redux";
+import { logIn, getName } from "../redux/actions";
+import { Navigate } from "react-router-dom";
 
 /**
  * FormLogin Component
@@ -11,22 +13,41 @@ import {logIn} from "../redux/actions";
  */
 
 function FormLogin() {
-	
 	const dispatch = useDispatch();
 	const [username, setUsername] = useState("");
 	const [password, setPassword] = useState("");
 	const [errorMessage, setErrorMessage] = useState("");
+	const isLogged = useSelector((state) => state.isLoggedReducer);
 
-	const handleSubmit = (e) => {
-		e.preventDefault();
-		setErrorMessage("")
-		if (username ==="" || password ===""){
-			setErrorMessage("Please fill the form to connect");
-		}
+	const handleSubmit = async (e) => {
 		console.log(username, password);
-		//dispatch(getTokenReducer(email, password))
-		dispatch(logIn());
+		e.preventDefault();
+		setErrorMessage("");
+		if (username === "" || password === "") {
+			setErrorMessage("Please fill the form to connect");
+			return;
+		}
+
+		const credentials = { email: username, password: password };
+
+		const dataToken = await getToken(credentials);
+		if (dataToken.status === 200) {
+			localStorage.setItem("token", dataToken.body.token);
+		} else {
+			setErrorMessage(dataToken.message);
+		}
+
+		const token = localStorage.getItem("token");
+		if (token) {
+			dispatch(logIn());
+			const dataUser = await getUser(token);
+			dispatch(getName(dataUser.body.firstName, dataUser.body.lastName));
+		}
 	};
+
+	if (isLogged) {
+		return <Navigate to="/user" />;
+	}
 
 	return (
 		<section className="sign-in-content">
@@ -40,7 +61,7 @@ function FormLogin() {
 				</div>
 				<div className="input-wrapper">
 					<label htmlFor="password">Password</label>
-					<input type="password" id="password" value={password} onChange={(e) => setPassword(e.target.value)}/>
+					<input type="password" id="password" value={password} onChange={(e) => setPassword(e.target.value)} />
 				</div>
 				<div className="input-remember">
 					<input type="checkbox" id="remember-me" />
