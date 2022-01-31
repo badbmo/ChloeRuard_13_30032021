@@ -14,11 +14,12 @@ import { logOut } from "../redux/actions";
 
 function Header() {
 	const isLogged = useSelector((state) => state.isLoggedReducer);
-	console.log(isLogged);
+	const UserInfos = useSelector((state) => state.getUserReducer);
 	const dispatch = useDispatch();
 
 	const handleLogOut = () => {
 		dispatch(logOut());
+		localStorage.removeItem("token");
 	};
 
 	const LoggedInNav = () => {
@@ -26,7 +27,7 @@ function Header() {
 			<div>
 				<NavLink className="main-nav-item" to="/user">
 					<i className="fa fa-user-circle"></i>
-					Tony
+					{UserInfos.firstName}
 				</NavLink>
 				<NavLink className="main-nav-item" onClick={handleLogOut} to="/">
 					<i className="fa fa-sign-out"></i>
