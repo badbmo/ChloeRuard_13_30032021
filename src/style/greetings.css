@@ -1,13 +1,30 @@
 .edit-button {
-  border-color: #00bc77;
-  background-color: #00bc77;
-  color: #fff;
-  font-weight: bold;
-  padding: 10px;
+	border-color: #00bc77;
+	background-color: #00bc77;
+	color: #fff;
+	font-weight: bold;
+	padding: 10px;
 }
 
 .header {
-  color: #fff;
-  margin-bottom: 2rem;
+	color: #fff;
+	margin-bottom: 2rem;
 }
 
+.edit-wrapper {
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+	column-gap: 30px;
+	row-gap: 20px;
+	justify-items: baseline;
+}
+
+.save-button,
+.newfirstname-input {
+	justify-self: flex-end;
+}
+
+.edit-input {
+	padding: 10px;
+	max-width: 250px;
+}

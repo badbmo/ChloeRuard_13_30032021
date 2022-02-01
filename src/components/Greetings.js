@@ -65,26 +65,30 @@ function Greetings() {
 		return (
 			<React.Fragment>
 				<h1>Welcome back</h1>
-				<input
-					type="text"
-					id="firstname"
-					placeholder={UserInfos.firstName}
-					value={newFirstName}
-					onChange={(e) => setfirstName(e.target.value)}
-				/>
-				<input
-					type="text"
-					id="firstname"
-					placeholder={UserInfos.lastName}
-					value={newLastName}
-					onChange={(e) => setlastName(e.target.value)}
-				/>
-				<button className="edit-button" onClick={handleSubmit}>
-					Save
-				</button>
-				<button className="edit-button" onClick={handleForm}>
-					Cancel
-				</button>
+				<div className="edit-wrapper">
+					<input
+						className="edit-input newfirstname-input"
+						type="text"
+						id="firstname"
+						placeholder={UserInfos.firstName}
+						value={newFirstName}
+						onChange={(e) => setfirstName(e.target.value)}
+					/>
+					<input
+						className="edit-input newlastname-input"
+						type="text"
+						id="firstname"
+						placeholder={UserInfos.lastName}
+						value={newLastName}
+						onChange={(e) => setlastName(e.target.value)}
+					/>
+					<button className="edit-button save-button" onClick={handleSubmit}>
+						Save
+					</button>
+					<button className="edit-button cancel-button" onClick={handleForm}>
+						Cancel
+					</button>
+				</div>
 			</React.Fragment>
 		);
 	};
