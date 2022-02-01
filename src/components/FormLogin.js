@@ -20,7 +20,6 @@ function FormLogin() {
 	const isLogged = useSelector((state) => state.isLoggedReducer);
 
 	const handleSubmit = async (e) => {
-		console.log(username, password);
 		e.preventDefault();
 		setErrorMessage("");
 		if (username === "" || password === "") {
